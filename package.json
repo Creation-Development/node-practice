@@ -1,0 +1,26 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "this is for practice.",
+  "main": "index.js",
+  "scripts": {
+    "test": "start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Creation-Development/node-practice.git"
+  },
+  "keywords": [
+    "practice"
+  ],
+  "author": "harsh gohil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Creation-Development/node-practice/issues"
+  },
+  "homepage": "https://github.com/Creation-Development/node-practice#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.12"
+  }
+}
