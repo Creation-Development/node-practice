@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import ClippedDrawer from './components/Appbar';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import SimplePaper from './components/Formui';
+import DenseTable from './components/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <ClippedDrawer />
+        <Switch>
+          <Route exact path="/home">
+            <div style={{marginLeft:"18%", marginTop:"8%"}}>
+            <DenseTable/>
+            </div>
+          </Route>
+          <Route exact path="/form">
+            <div style={{marginLeft:"30%", marginTop:"8%"}}>
+            <SimplePaper/>
+            </div>
+          </Route>
+        </Switch>
+      </Router>
+    </>
   );
 }
 
