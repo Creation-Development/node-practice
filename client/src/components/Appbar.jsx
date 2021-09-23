@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import HomeIcon from '@material-ui/icons/Home';
 import TocIcon from '@material-ui/icons/Toc';
 import Listitem from './Listitem';
+import PersonAddIcon from '@material-ui/icons/PersonAdd';
 
 const drawerWidth = 240;
 
@@ -38,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ClippedDrawer() {
     const classes = useStyles();
- var icons=[<HomeIcon/>,<TocIcon/>]
+ var icons=[<PersonAddIcon/>,<TocIcon/>]
     return (
         <div className={classes.root}>
             <CssBaseline />
@@ -59,7 +60,7 @@ export default function ClippedDrawer() {
                 <Toolbar />
                 <div className={classes.drawerContainer}>
                     <List>
-                        {['Home', 'Form'].map((text,index) => (
+                        {['Users', 'Form'].map((text,index) => (
                             <Listitem name={text} icon={icons[index]} />
                         ))}
                     </List>

@@ -14,7 +14,19 @@ app.get('/', (req, res) => {
   res.send(arr)
 })
 
-app.post('/add',(req,res)=>{
+app.post('/user/add',(req,res)=>{
     arr =[...arr,req.body]
     res.send(req.body)
+})
+app.delete('/user/delete/:id',(req,res)=>{
+  console.log(req.params.id);
+    var id = req.params.id
+    arr.splice(id,1)
+    console.log(arr);
+})
+app.put('/user/update/:id',(req,res)=>{
+  console.log(req.params.id);
+    var id = req.params.id
+    arr.splice(id,1,req.body)
+    console.log(arr);
 })

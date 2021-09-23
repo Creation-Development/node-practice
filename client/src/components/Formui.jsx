@@ -25,7 +25,7 @@ export default function SimplePaper() {
     const [phone, setphone] = useState("")
     const [pass, setpass] = useState("")
     const [conpass, setconpass] = useState("")
-    const url = "http://localhost:5000/add"
+    const url = "http://localhost:5000/user/add"
     var value = {}
     useEffect(() => {
         axios.get("http://localhost:5000")
