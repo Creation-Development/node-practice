@@ -18,7 +18,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
     },
     appBar: {
-        backgroundColor: "rgb(31, 231, 245)",
         zIndex: theme.zIndex.drawer + 1,
     },
     drawer: {
@@ -45,7 +44,7 @@ export default function ClippedDrawer() {
             <CssBaseline />
             <AppBar position="fixed" className={classes.appBar}>
                 <Toolbar>
-                    <Typography variant="h6" noWrap style={{ color: "black" }}>
+                    <Typography variant="h6" noWrap style={{ color: "white" }}>
                         Node Tutorial
                     </Typography>
                 </Toolbar>

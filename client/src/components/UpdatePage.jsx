@@ -56,11 +56,17 @@ function UpdatePage(props) {
         var email = document.getElementById('email').value
         var phone = document.getElementById('phone').value
         var pass = document.getElementById('pass').value
-        if (!(/^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/).test(email)) {
+        if (!(/[a-zA-Z]{5}/).test(name)) {
+            alert("Name is not valid...!!")
+        }
+        else if (!(/^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/).test(email)) {
             alert("email is not valid...!!")
         }
         else if (!(/[0-9]{10}/).test(phone)) {
             alert(" mobile number is invalid")
+        }
+        else if (!(/[a-zA-Z0-9]{8}/).test(pass)) {
+            alert("Password must be more then or equal to 8 character")
         }
         else {
             value = { "name": name, "email": email, "phone": phone, "pass": pass }

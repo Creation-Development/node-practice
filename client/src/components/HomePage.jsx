@@ -20,7 +20,7 @@ export default function DenseTable() {
     })
   }, []);
   const handalDelete = (index) => {
-    console.log(index);
+    if(window.confirm("Sure You Want to Delete User???")===true){
     axios.delete(`http://localhost:5000/user/delete/${index}`, { id: index }).
       then((res) => (
         console.log("delete Done")
@@ -28,20 +28,33 @@ export default function DenseTable() {
         console.log(value)
       })
     window.location = "/users"
+    }
+    else{
+      window.location = "/users"
+    }
+
+    // confirm("Sure You Want to Delete User??")
+    // axios.delete(`http://localhost:5000/user/delete/${index}`, { id: index }).
+    //   then((res) => (
+    //     console.log("delete Done")
+    //   )).catch((value) => {
+    //     console.log(value)
+    //   })
+    // window.location = "/users"
   }
   return (
     <>
-    {
-          data.length === 0 ?
-          null:
-      <h6 className="text-center text-danger m-4">Note : you can't change your e-mail address</h6>}
+      {
+        data.length === 0 ?
+          null :
+          <h6 className="text-center text-danger m-4">Note : you can't change your e-mail address</h6>}
       <TableContainer style={{ width: "1200px" }} component={Paper}>
         {
           data.length === 0 ?
             <h1 className="text-center m-4">No User Found</h1> :
             <>
               <Table sx={{ minWidth: 400 }} size="small" aria-label="a dense table">
-                <TableHead style={{borderBottom:"2px solid black"}}>
+                <TableHead style={{ borderBottom: "2px solid black" }}>
                   <TableRow>
                     <TableCell align="center"><h6 className="m-3">User Id</h6></TableCell>
                     <TableCell align="center"><h6 className="m-3">User Name</h6></TableCell>

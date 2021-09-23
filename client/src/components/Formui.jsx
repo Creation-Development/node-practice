@@ -49,6 +49,9 @@ export default function SimplePaper() {
         if (name === "" || email === "" || phone === "" || pass === "" || conpass === "") {
             alert("fields can not Empty...!!")
         }
+        else if (!(/[a-zA-Z]{5}/).test(name)) {
+            alert("Name is not valid...!!")
+        }
         else if (!(/^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+.[a-zA-Z]$/).test(email)) {
             alert("email is not valid...!!")
         }
@@ -57,6 +60,9 @@ export default function SimplePaper() {
         }
         else if (!(/[0-9]{10}/).test(phone)) {
             alert(" mobile number is invalid")
+        }
+        else if (!(/[a-zA-Z0-9]{8}/).test(pass)) {
+            alert("Password must be more then or equal to 8 character")
         }
         else if(pass !== conpass){
             alert("password Does't Match try again..")
@@ -72,11 +78,11 @@ export default function SimplePaper() {
                 <h3 className="text-center my-4">
                     Registration Form
                 </h3>
-                <TextField margin="normal" onChange={(e) => (setname(e.target.value))} className="w-75 my-3" required fullWidth id="username" label="User Name" name="username" autoComplete="name" autoFocus />
-                <TextField margin="normal" onChange={(e) => (setemail(e.target.value))} className="w-75 my-3" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus />
-                <TextField margin="normal" onChange={(e) => (setphone(e.target.value))} className="w-75 my-3" required fullWidth id="number" label="Mobile No." name="phone" autoComplete="number" autoFocus />
-                <TextField margin="normal" onChange={(e) => (setpass(e.target.value))} className="w-75 my-3" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" />
-                <TextField margin="normal" onChange={(e) => (setconpass(e.target.value))} className="w-75 my-3" required fullWidth name="confirm_password" label="Confirm Password" type="password" id="confirm_password" autoComplete="current-password" />
+                <TextField margin="normal" color="secondary" variant="filled" onChange={(e) => (setname(e.target.value))} className="w-75 my-3" required fullWidth id="username" label="User Name" name="username" autoComplete="name" autoFocus />
+                <TextField margin="normal" color="secondary" variant="filled" onChange={(e) => (setemail(e.target.value))} className="w-75 my-3" required fullWidth id="email" label="Email Address" name="email" autoComplete="email" autoFocus />
+                <TextField margin="normal" color="secondary" variant="filled" onChange={(e) => (setphone(e.target.value))} className="w-75 my-3" required fullWidth id="number" label="Mobile No." name="phone" autoComplete="number" autoFocus />
+                <TextField margin="normal" color="secondary" variant="filled" onChange={(e) => (setpass(e.target.value))} className="w-75 my-3" required fullWidth name="password" label="Password" type="password" id="password" autoComplete="current-password" />
+                <TextField margin="normal" color="secondary" variant="filled" onChange={(e) => (setconpass(e.target.value))} className="w-75 my-3" required fullWidth name="confirm_password" label="Confirm Password" type="password" id="confirm_password" autoComplete="current-password" />
                 <div className="text-center my-4">
                     {
                         name === "" || email === "" || phone === "" || pass === "" || conpass === ""
@@ -86,7 +92,7 @@ export default function SimplePaper() {
                                 onClick={(e) => validation(e, name, email, phone,conpass, pass)}
                                 type="submit"
                                 fullWidth
-                                color="primary"
+                                color="secondary"
                                 variant="contained"
                                 sx={{ mt: 3, mb: 2 }}
                                 disabled
@@ -99,8 +105,8 @@ export default function SimplePaper() {
                                 onClick={(e) => validation(e, name, email, phone,conpass, pass)}
                                 type="submit"
                                 fullWidth
-                                color="primary"
                                 variant="contained"
+                                color="secondary"
                                 sx={{ mt: 3, mb: 2 }}
                             >
                                 Sign In
